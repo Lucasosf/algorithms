@@ -2,8 +2,10 @@
 The idea of this repository is to keep safe my studies about algorithms
 in diferents languages.
 
-1. The Elevator Algorithm
+## The Elevator Algorithm
+
 Is lunch time, then you have to get peaple to ground floor quickly.
+
 Data volume:
  - 14 floors
  - more then 1 elevator fully of peaple per floor
@@ -20,3 +22,4 @@ Check the results for:
  - C++
  - Python
  - C#
+
