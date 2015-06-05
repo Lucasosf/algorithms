@@ -15,11 +15,9 @@ Data volume:
 
 Let the games begin.
 
-Check the results for:
- - Ruby
- - Elixir
- - Javascript
- - C++
- - Python
- - C#
+## The Hello World Algorithm
+
+The beginning of this series of challenges is to make an program that
+show the message "Hello World!" as default, but the programmer can use
+the same code to write direct messages like "Hello Lucas!"
 
