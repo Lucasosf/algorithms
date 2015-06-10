@@ -1,12 +1,14 @@
-#include "google/gtest/include/gtest/gtest.h"
+//main.cpp code goes here
+#include "gtest/gtest.h"
+#include "HelloWorld.hpp"
 
-int sum(int a, int b) {return a+b;}
-
-TEST(Sum, Normal) {
-  EXPECT_EQ(5, sum(2, 3));
+TEST(HelloWorld, Normal) {
+  HelloWorld* helloWorld = new HelloWorld();
+    EXPECT_EQ("Hello World!", helloWorld->say());
+    EXPECT_EQ("Hello Lucas!", helloWorld->say("Lucas"));
 }
 
 int main(int argc, char **argv) {
-  testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
+    testing::InitGoogleTest(&argc, argv);
+      return RUN_ALL_TESTS();
 }
