@@ -8,10 +8,10 @@ Is lunch time, then you have to get peaple to ground floor quickly.
 
 Data volume:
  - 14 floors
- - more then 1 elevator fully of peaple per floor
+ - 30 people per floor weighing 80kg each one
  - 4 elavators
  - there is stairs
- - the elevator has the technology that you want
+ - the elevator supports up to 800 kg
 
 Let the games begin.
 

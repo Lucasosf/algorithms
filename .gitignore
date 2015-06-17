@@ -7,4 +7,8 @@ hello_world/cpp/bii/lib
 hello_world/cpp/bin
 hello_world/cpp/bii/.hive.db
 
+# elixir
+hello_world/elixir/_build
 
+# ruby
+hello_world/ruby/.bundle
