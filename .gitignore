@@ -11,10 +11,7 @@ hello_world/cpp/bii/.hive.db
 hello_world/elixir/_build
 
 # ruby
-hello_world/ruby/.bundle
-/hello_world/java/nbproject/private/
-/hello_world/java/build/
-/hello_world/java/target/
+*.bundle
 
 # java
-*java/target*
+*target
