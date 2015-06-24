@@ -1,12 +1,21 @@
 Instructions
 ============
 
-You must to have [ruby](https://www.ruby-lang.org) installed.
+You must to have a C++ compiler and the [biicode](https://www.biicode.com) installed.
 
-Then, just run the follow:
+Then, just run the follow.
 
+To resolve dependencies:
 ```
-bundle install
-bundle exec rspec
+bii find
 ```
 
+To build your code:
+```
+bii build
+```
+
+And to execute your builded program:
+```
+./bin/user_cpp_main
+```
