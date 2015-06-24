@@ -12,3 +12,9 @@ hello_world/elixir/_build
 
 # ruby
 hello_world/ruby/.bundle
+/hello_world/java/nbproject/private/
+/hello_world/java/build/
+/hello_world/java/target/
+
+# java
+*java/target*
