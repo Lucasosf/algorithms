@@ -1,11 +1,11 @@
 # cpp
-hello_world/cpp/bii/build
-hello_world/cpp/bii/cmake
-hello_world/cpp/bii/deps
-hello_world/cpp/bii/lib
+*build
+*cmake
+*deps
+*lib
 
-hello_world/cpp/bin
-hello_world/cpp/bii/.hive.db
+*bin
+*.hive.db
 
 # elixir
 hello_world/elixir/_build
