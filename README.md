@@ -14,6 +14,21 @@ Data volume:
 
 Let the games begin.
 
+## [The Fibonacci Algorithm](https://github.com/Lucasosf/algorithms/tree/master/fibonacci)
+
+Based on [this](https://en.wikipedia.org/wiki/Fibonacci_number), this algo must to generate a list of numbers like this:
+
+```ruby
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...]
+```
+
+And given a start point like this:
+
+```ruby
+[5, 8, 13, 21, 34, 55, 89, 144, ...]
+```
+
+
 ## [The Hello World Algorithm](https://github.com/Lucasosf/algorithms/tree/master/hello_world)
 
 The beginning of this series of challenges is to make an program that
