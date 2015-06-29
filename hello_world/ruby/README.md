@@ -1,22 +1,17 @@
 Instructions
 ============
 
-You must to have [bii](http://biicode.com) installed.
+You must to have [ruby](https://www.ruby-lang.org/) and the [bundler](http://bundler.io/) installed
 
 Then, just run the follow:
 
 To resolve dependencies:
 ```
-bii find
-```
-
-To build:
-```
-bii build
+bundle install
 ```
 
 To run the tests:
 ```
-bin/user_cpp_main
+bundle exec rspec
 ```
 
