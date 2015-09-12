@@ -8,7 +8,10 @@ hello_world/cpp/bii/lib
 *.hive.db
 
 # elixir
-hello_world/elixir/_build
+hello_world/elixir/answer/_build
+hello_world/elixir/challenge/_build
+fibonacci/elixir/answer/_build
+fibonacci/elixir/challenge/_build
 
 # ruby
 *.bundle
