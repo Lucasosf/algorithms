@@ -1,4 +1,5 @@
 defmodule Fibonacci do
+  # TODO: consider think again about this algo
   def generate(number \\ 10) do
     number = number - 2
     serie = next(0, 1, number, [0, 1])
