@@ -1,4 +1,0 @@
-Fibonacci
-=========
-
-** TODO: Add description **
