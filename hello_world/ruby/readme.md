@@ -6,12 +6,14 @@ You must to have [ruby](https://www.ruby-lang.org/) and the [bundler](http://bun
 Then, just run the follow:
 
 To resolve dependencies:
+
 ```
 bundle install
 ```
 
 To run the tests:
+
 ```
-bundle exec rspec
+bundle exec rspec --color
 ```
 
