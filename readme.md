@@ -26,5 +26,6 @@ hello_world
 - [Hello World](/hello_world)
 - [Fibonacci](/fibonacci)
 - [Selection Sort](/selection_sort)
+- [Merge Sort](/merge_sort)
 
 Thanks
