@@ -1,4 +1,5 @@
-require 'spec_helper'
+require_relative 'fibonacci'
+require 'rspec'
 
 RSpec.describe Fibonacci do
   subject(:fibonacci) { described_class }
