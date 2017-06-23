@@ -23,7 +23,8 @@ hello_world
 
 ## Algorithms
 
-- [The Fibonacci Algorithm](/fibonacci)
 - [Hello World](/hello_world)
+- [Fibonacci](/fibonacci)
+- [Selection Sort](/selection_sort)
 
 Thanks
