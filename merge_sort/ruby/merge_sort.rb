@@ -17,9 +17,9 @@ class MergeSort
     until left.empty? || right.empty?
       sorted << if left.first <= right.first
                   left.shift
-      else
-        right.shift
-      end
+                else
+                  right.shift
+                end
     end
 
     sorted + left + right
