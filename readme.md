@@ -29,4 +29,8 @@ hello_world
 - [Merge Sort](/merge_sort)
 - [Quick Sort](/quick_sort)
 
+## Books
+
+- [Computer Science Distilled](https://code.energy/learn-computer-science/)
+
 Thanks
