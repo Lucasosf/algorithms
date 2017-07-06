@@ -3,6 +3,7 @@ workspace "QuickSort"
   language "C++"
   targetdir "bin/%{cfg.buildcfg}"
   flags { "C++14" }
+  buildoptions { "-lpthread" }
 
   filter "configurations:Debug"
     defines { "DEBUG" }
