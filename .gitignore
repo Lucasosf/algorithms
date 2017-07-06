@@ -5,6 +5,7 @@ hello_world/cpp/bii/deps
 hello_world/cpp/bii/lib
 
 *bin
+*obj
 *.hive.db
 
 # elixir
@@ -18,3 +19,5 @@ fibonacci/elixir/challenge/_build
 
 # java
 *target
+
+

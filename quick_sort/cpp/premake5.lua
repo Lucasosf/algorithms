@@ -1,13 +1,27 @@
 workspace "QuickSort"
-  configurations {"Debug"}
+  configurations {"Debug", "Release"}
+  language "C++"
+  targetdir "bin/%{cfg.buildcfg}"
+  flags { "C++14" }
+
+  filter "configurations:Debug"
+    defines { "DEBUG" }
+    flags { "Symbols" }
+
+  filter "configurations:Release"
+    defines { "RELEASE" }
+    optimize "On"
+
+  project "GoogleTest"
+    kind "StaticLib"
+    files { "./../../support/cpp/googletest/googletest/src/gtest-all.cc" }
+    includedirs {
+      "./../../support/cpp/googletest/googletest/include",
+      "./../../support/cpp/googletest/googletest"
+    }
 
   project "quick_sort"
     kind "ConsoleApp"
-    language "C++"
-    targetdir "bin"
-
     files { "*.h", "*.cpp" }
-
-    filter "configurations:Debug"
-      defines { "DEBUG" }
-      symbols "On"
+    includedirs { "./../../support/cpp/googletest/googletest/include" }
+    links { "GoogleTest" }

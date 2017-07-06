@@ -13,19 +13,19 @@ endif
 ifeq ($(config),debug)
   RESCOMP = windres
   TARGETDIR = bin/Debug
-  TARGET = $(TARGETDIR)/quick_sort
-  OBJDIR = obj/Debug/quick_sort
+  TARGET = $(TARGETDIR)/libGoogleTest.a
+  OBJDIR = obj/Debug/GoogleTest
   DEFINES += -DDEBUG
-  INCLUDES += -I../../support/cpp/googletest/googletest/include
+  INCLUDES += -I../../support/cpp/googletest/googletest/include -I../../support/cpp/googletest/googletest
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -g
   ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -g -std=c++14
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  LIBS += bin/Debug/libGoogleTest.a
-  LDDEPS += bin/Debug/libGoogleTest.a
+  LIBS +=
+  LDDEPS +=
   ALL_LDFLAGS += $(LDFLAGS)
-  LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
+  LINKCMD = $(AR) -rcs "$@" $(OBJECTS)
   define PREBUILDCMDS
   endef
   define PRELINKCMDS
@@ -40,19 +40,19 @@ endif
 ifeq ($(config),release)
   RESCOMP = windres
   TARGETDIR = bin/Release
-  TARGET = $(TARGETDIR)/quick_sort
-  OBJDIR = obj/Release/quick_sort
+  TARGET = $(TARGETDIR)/libGoogleTest.a
+  OBJDIR = obj/Release/GoogleTest
   DEFINES += -DRELEASE
-  INCLUDES += -I../../support/cpp/googletest/googletest/include
+  INCLUDES += -I../../support/cpp/googletest/googletest/include -I../../support/cpp/googletest/googletest
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -O2
   ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -O2 -std=c++14
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  LIBS += bin/Release/libGoogleTest.a
-  LDDEPS += bin/Release/libGoogleTest.a
+  LIBS +=
+  LDDEPS +=
   ALL_LDFLAGS += $(LDFLAGS) -s
-  LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
+  LINKCMD = $(AR) -rcs "$@" $(OBJECTS)
   define PREBUILDCMDS
   endef
   define PRELINKCMDS
@@ -65,8 +65,7 @@ all: $(TARGETDIR) $(OBJDIR) prebuild prelink $(TARGET)
 endif
 
 OBJECTS := \
-	$(OBJDIR)/main.o \
-	$(OBJDIR)/quick_sort.o \
+	$(OBJDIR)/gtest-all.o \
 
 RESOURCES := \
 
@@ -81,7 +80,7 @@ ifeq (/bin,$(findstring /bin,$(SHELL)))
 endif
 
 $(TARGET): $(GCH) ${CUSTOMFILES} $(OBJECTS) $(LDDEPS) $(RESOURCES)
-	@echo Linking quick_sort
+	@echo Linking GoogleTest
 	$(SILENT) $(LINKCMD)
 	$(POSTBUILDCMDS)
 
@@ -102,7 +101,7 @@ else
 endif
 
 clean:
-	@echo Cleaning quick_sort
+	@echo Cleaning GoogleTest
 ifeq (posix,$(SHELLTYPE))
 	$(SILENT) rm -f  $(TARGET)
 	$(SILENT) rm -rf $(OBJDIR)
@@ -124,10 +123,7 @@ $(GCH): $(PCH)
 	$(SILENT) $(CXX) -x c++-header $(ALL_CXXFLAGS) -o "$@" -MF "$(@:%.gch=%.d)" -c "$<"
 endif
 
-$(OBJDIR)/main.o: main.cpp
-	@echo $(notdir $<)
-	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/quick_sort.o: quick_sort.cpp
+$(OBJDIR)/gtest-all.o: ../../support/cpp/googletest/googletest/src/gtest-all.cc
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 

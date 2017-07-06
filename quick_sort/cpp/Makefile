@@ -9,22 +9,34 @@ ifndef verbose
 endif
 
 ifeq ($(config),debug)
+  GoogleTest_config = debug
   quick_sort_config = debug
 endif
+ifeq ($(config),release)
+  GoogleTest_config = release
+  quick_sort_config = release
+endif
 
-PROJECTS := quick_sort
+PROJECTS := GoogleTest quick_sort
 
 .PHONY: all clean help $(PROJECTS) 
 
 all: $(PROJECTS)
 
-quick_sort:
+GoogleTest:
+ifneq (,$(GoogleTest_config))
+	@echo "==== Building GoogleTest ($(GoogleTest_config)) ===="
+	@${MAKE} --no-print-directory -C . -f GoogleTest.make config=$(GoogleTest_config)
+endif
+
+quick_sort: GoogleTest
 ifneq (,$(quick_sort_config))
 	@echo "==== Building quick_sort ($(quick_sort_config)) ===="
 	@${MAKE} --no-print-directory -C . -f quick_sort.make config=$(quick_sort_config)
 endif
 
 clean:
+	@${MAKE} --no-print-directory -C . -f GoogleTest.make clean
 	@${MAKE} --no-print-directory -C . -f quick_sort.make clean
 
 help:
@@ -32,10 +44,12 @@ help:
 	@echo ""
 	@echo "CONFIGURATIONS:"
 	@echo "  debug"
+	@echo "  release"
 	@echo ""
 	@echo "TARGETS:"
 	@echo "   all (default)"
 	@echo "   clean"
+	@echo "   GoogleTest"
 	@echo "   quick_sort"
 	@echo ""
 	@echo "For more information, see http://industriousone.com/premake/quick-start"
