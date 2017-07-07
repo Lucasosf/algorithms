@@ -19,10 +19,10 @@ ifeq ($(config),debug)
   INCLUDES += -I../../support/cpp/googletest/googletest/include -I../../support/cpp/googletest/googletest
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
-  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -g -pthread
-  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -g -std=c++14 -pthread
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -g -lpthread -lrt
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -g -std=c++14 -lpthread -lrt
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  LIBS +=
+  LIBS += -lpthread
   LDDEPS +=
   ALL_LDFLAGS += $(LDFLAGS)
   LINKCMD = $(AR) -rcs "$@" $(OBJECTS)
@@ -46,10 +46,10 @@ ifeq ($(config),release)
   INCLUDES += -I../../support/cpp/googletest/googletest/include -I../../support/cpp/googletest/googletest
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
-  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -O2 -pthread
-  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -O2 -std=c++14 -pthread
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -O2 -lpthread -lrt
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -O2 -std=c++14 -lpthread -lrt
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  LIBS +=
+  LIBS += -lpthread
   LDDEPS +=
   ALL_LDFLAGS += $(LDFLAGS) -s
   LINKCMD = $(AR) -rcs "$@" $(OBJECTS)
