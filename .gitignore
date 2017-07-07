@@ -7,6 +7,7 @@ hello_world/cpp/bii/lib
 *bin
 *obj
 *.hive.db
+*.make
 
 # elixir
 hello_world/elixir/answer/_build

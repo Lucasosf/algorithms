@@ -1,7 +1,15 @@
 Instructions
 ============
 
-You must to have a C++ compiler like `g++` and `make`, then build the code:
+You need to install [Premake5](https://premake.github.io/), a C++ compiler like `g++` and `make`.
+
+Create the make files:
+
+```
+premake5 gmake
+```
+
+Then, build the code:
 
 ```
 make
