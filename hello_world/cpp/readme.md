@@ -1,24 +1,22 @@
 Instructions
 ============
 
-You must to have a C++ compiler and the [biicode](https://www.biicode.com) installed.
+You need to install [Premake5](https://premake.github.io/), a C++ compiler like `g++` and `make`.
 
-Then, just run the follow.
-
-To resolve dependencies:
+Create the make files:
 
 ```
-bii find
+premake5 gmake
 ```
 
-To build your code:
+Then, build the code:
 
 ```
-bii build
+make
 ```
 
-And to execute your builded program:
+And to execute the program:
 
 ```
-./bin/user_cpp_main
+./bin/Debug/HelloWorld
 ```

@@ -4,6 +4,8 @@ hello_world/cpp/bii/cmake
 hello_world/cpp/bii/deps
 hello_world/cpp/bii/lib
 
+Makefile
+
 *bin
 *obj
 *.hive.db
