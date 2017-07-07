@@ -29,6 +29,14 @@ hello_world
 - [Merge Sort](/merge_sort)
 - [Quick Sort](/quick_sort)
 
+## Install
+
+In order to clone the support libraries you need to clone recursively:
+
+```
+git clone --recursive git@github.com:lucasprag/algorithms.git
+```
+
 ## Books
 
 - [Computer Science Distilled](https://code.energy/learn-computer-science/)
