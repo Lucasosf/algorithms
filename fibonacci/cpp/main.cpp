@@ -1,24 +1,40 @@
 #include "gtest/gtest.h"
 #include "Fibonacci.hpp"
-TEST(Fibonacci, Normal) {
-  Fibonacci* fibonacci = new Fibonacci();
 
-  int* serie_ten = new int[10];
-  serie_ten[0] = 0;
-  serie_ten[1] = 1;
-  serie_ten[2] = 1;
-  serie_ten[3] = 2;
-  serie_ten[4] = 3;
-  serie_ten[5] = 5;
-  serie_ten[6] = 8;
-  serie_ten[7] = 13;
-  serie_ten[8] = 21;
-  serie_ten[9] = 34;
+TEST(Fibonacci, MoreThanTwoNumbers) {
+  Fibonacci fibonacci;
 
-  EXPECT_EQ(serie_ten, fibonacci->generate());
+  int* generated = fibonacci.generate();
+  int expected[10] = { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 };
+
+  int generated_size = sizeof(generated) / sizeof(generated[0]);
+  for (int i = 0; i < generated_size ; i++) {
+    EXPECT_EQ(expected[i], generated[i]);
+  }
+}
+
+TEST(Fibonacci, TwoNumbers) {
+  Fibonacci fibonacci;
+
+  int* generated = fibonacci.generate(5);
+  int expected[2] = { 0, 1 };
+
+  for (int i = 0; i < 2 ; i++) {
+    EXPECT_EQ(expected[i], generated[i]);
+  }
+}
+
+TEST(Fibonacci, OneNumber) {
+  Fibonacci fibonacci;
+
+  int* generated = fibonacci.generate(1);
+  int expected[1] = { 0 };
+
+  //TODO: check the generated size
+  EXPECT_EQ(expected[0], generated[0]);
 }
 
 int main(int argc, char **argv) {
-  testing::InitGoogleTest(&argc, argv);
+  ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }

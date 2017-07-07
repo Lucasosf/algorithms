@@ -1,4 +1,4 @@
-workspace "HelloWorld"
+workspace "Fibonacci"
   configurations {"Debug", "Release"}
   language "C++"
   targetdir "bin/%{cfg.buildcfg}"
@@ -24,7 +24,7 @@ workspace "HelloWorld"
       "./../../support/cpp/googletest/googletest"
     }
 
-  project "HelloWorld"
+  project "Fibonacci"
     kind "ConsoleApp"
     files { "*.hpp", "*.cpp" }
     includedirs { "./../../support/cpp/googletest/googletest/include" }
