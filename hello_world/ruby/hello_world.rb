@@ -1,6 +1,5 @@
 class HelloWorld
-  def self.say(name = nil)
-    name = 'World' if name.nil?
+  def self.say(name = 'World')
     "Hello #{name}!"
   end
 end
