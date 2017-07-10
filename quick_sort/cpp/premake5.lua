@@ -24,7 +24,7 @@ workspace "QuickSort"
       "./../../support/cpp/googletest/googletest"
     }
 
-  project "quick_sort"
+  project "QuickSort"
     kind "ConsoleApp"
     files { "*.h", "*.cpp" }
     includedirs { "./../../support/cpp/googletest/googletest/include" }

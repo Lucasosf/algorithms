@@ -18,5 +18,5 @@ make
 And to execute the program:
 
 ```
-./bin/Debug/quick_sort
+./bin/Debug/QuickSort
 ```
