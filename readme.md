@@ -25,9 +25,9 @@ hello_world
 
 - [Hello World](/hello_world)
 - [Fibonacci](/fibonacci)
-- [Selection Sort](/selection_sort)
-- [Merge Sort](/merge_sort)
-- [Quick Sort](/quick_sort)
+- [Merge Sort](/merge_sort) O(n log n)
+- [Quick Sort](/quick_sort) O(n log n)
+- [Selection Sort](/selection_sort) O(n²)
 
 ## Install
 
